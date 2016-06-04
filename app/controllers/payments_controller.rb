@@ -1,6 +1,8 @@
 class PaymentsController < InheritedResources::Base
-  before_action :set_user
-  before_action :set_complaint
+  skip_before_filter :verify_authenticity_token, only: :success
+  before_action :molpay_params, only: :success
+  before_action :set_user, only: :create
+  before_action :set_complaint, only: :create
   before_action :set_payment, only: :create
   before_action :authenticate_user!
 
@@ -10,13 +12,19 @@ class PaymentsController < InheritedResources::Base
   end
 
   def success
-
+    @payment.status = params[:status]
+    @payment.save
+    redirect_to @payment
   end
 
   private
 
   def payment_params
     params.require(:payment).permit(:amount, :user_id, :complaint_id)
+  end
+
+  def molpay_params
+    @payment = Payment.find(param[:orderid])
   end
 
   def set_complaint
