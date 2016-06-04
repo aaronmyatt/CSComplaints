@@ -14,4 +14,8 @@ class Complaint < ActiveRecord::Base
   def nearby
     Complaint.near(self.address, 50, :order => false)
   end
+
+  def total_votes
+    self.votes_for.size
+  end
 end
