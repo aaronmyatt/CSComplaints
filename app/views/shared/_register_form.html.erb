@@ -1,7 +1,9 @@
-<form>
-  <input class="input" type="text" placeholder="Name" />
-  <input class="input" type="email" placeholder="Email" />
-  <input class="input" type="password" placeholder="Password" />
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),remote: true, format: :json) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.text_field :name, autofocus: true, class: 'input', placeholder: "Name" %>
+  <%= f.email_field :email, class: 'input', placeholder: "Email" %>
+  <%= f.password_field :password, class: 'input', placeholder: 'Password', autocomplete: "off" %>
+  <%= f.password_field :password_confirmation, class: 'input', autocomplete: "off", placeholder: "Confirm Password" %>
 
-  <input class="button is-fullwidth is-primary" type="submit" value="Register with Email">
-</form>
+  <%= f.submit "Register with Email", class: "button is-fullwidth is-primary" %>
+<% end %>
