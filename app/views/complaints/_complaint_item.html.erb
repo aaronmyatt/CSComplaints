@@ -13,10 +13,15 @@
       <p><i class="fa fa-map-marker"></i> <%= complaint.address %></p>
     </div>
   </div>
-
   <div class="level-right">
+    <a class="button is-link is-inverted" id="pay-btn">Back this cause</a>
     <div class="issue-list__raised level-item">
       <p>Raised <span>RM120</span></p>
     </div>
   </div>
+
+  <div id="" class="is-hidden complaint-payment-form">
+    <%= render partial: 'shared/payment_form', locals: {payment: complaint.payments} %>
+  </div>
+
 </div>

@@ -1,0 +1,9 @@
+<%= form_for(Payment.new) do |f| %>
+      <div class="field">
+        <%= f.label :amount %><br>
+        <%= f.text_field :amount %>
+      </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
