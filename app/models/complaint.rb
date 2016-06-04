@@ -16,4 +16,8 @@ class Complaint < ActiveRecord::Base
   def nearby(location = "Kuala Lumpur")
     Complaint.near(location, 50, :order => false)
   end
+
+  def total_amount
+    payments.reduce(0) {|sum,x| sum + x.amount}
+  end
 end
