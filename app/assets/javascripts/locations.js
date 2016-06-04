@@ -10,7 +10,7 @@ function getLocations( search ){
 }
 
 $(function() {
-  return $(document).on("keyup", "#search", function() {
+  $(document).on("keyup", "#search", function() {
     var search = $(this).val();
 
     if (typeof delay_id !== "undefined" && delay_id !== null) {
@@ -22,5 +22,11 @@ $(function() {
     return delay(1000, function() {
       return getLocations(search);
     });
+  });
+
+  $(document).on("click", ".address-selector", function(){
+    var lat = $(this).data('lat'), lng = $(this).data('lat');
+    $("#complaint_latitude").val(lat);
+    $("#complaint_longitude").val(lng);
   });
 });

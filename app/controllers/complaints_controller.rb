@@ -5,7 +5,6 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
-    @user = current_user if user_signed_in?
   end
 
   # GET /complaints/1
@@ -72,6 +71,6 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.require(:complaint).permit( :title, :description )
+      params.require(:complaint).permit( :title, :description, :address, :latitude, :longitude )
     end
 end
