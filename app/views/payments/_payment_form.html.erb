@@ -6,12 +6,12 @@
 
     <div class="field is-hidden">
       <%= f.label :user_id %><br>
-      <%= f.text_field :user_id %>
+      <%= f.text_field :user_id, value: current_user.id %>
     </div>
 
     <div class="field is-hidden">
       <%= f.label :complaint_id %><br>
-      <%= f.text_field :complaint_id, value:  %>
+      <%= f.text_field :complaint_id, value: complaint.id %>
     </div>
     <div class="actions">
       <%= f.submit %>
