@@ -3,7 +3,9 @@ class UpvoteController < ApplicationController
   def upvote
     return unless set_user
     complaint = Complaint.find(params[:id])
-    complaint.liked_by @user
+    if complaint.liked_by @user
+      return render :json => {:success => true}
+    end
   end
 
   private
