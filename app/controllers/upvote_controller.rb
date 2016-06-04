@@ -1,8 +1,9 @@
 class UpvoteController < ApplicationController
 
-  def upvote(complaint)
+  def upvote
     return unless set_user
-    complaint.liked_by @user 
+    complaint = Complaint.find(params[:id])
+    complaint.liked_by @user
   end
 
   private
