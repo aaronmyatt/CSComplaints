@@ -3,6 +3,8 @@ class Complaint < ActiveRecord::Base
   belongs_to :user
   acts_as_votable
 
+  has_many :payments
+
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :title, presence: true
   validates :description, presence: true
