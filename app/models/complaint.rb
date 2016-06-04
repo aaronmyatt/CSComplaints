@@ -1,6 +1,8 @@
 class Complaint < ActiveRecord::Base
   geocoded_by :address
 
+  has_one :user
+
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :title, presence: true
   validates :description, presence: true
