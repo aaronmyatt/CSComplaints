@@ -24,7 +24,7 @@ class PaymentsController < InheritedResources::Base
   end
 
   def molpay_params
-    @payment = Payment.find(param[:orderid])
+    @payment = Payment.find(params[:orderid])
   end
 
   def set_complaint
