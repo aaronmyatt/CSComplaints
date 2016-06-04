@@ -4,10 +4,6 @@ function getLocations( search ){
     dataType: "JSON",
     method: "POST",
     data: { search: search }
-  })
-  .done(function(data){
-    console.log('asdasd');
-    $("#search_results").html(data);
   });
 }
 

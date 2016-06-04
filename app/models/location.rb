@@ -18,8 +18,8 @@ class Location
         end
       end
     rescue Exception => e
-      logger.info "Unable to complete request"
-      logger.info e.to_s
+      puts "Unable to complete request"
+      puts e.to_s
     end
 
     locations
