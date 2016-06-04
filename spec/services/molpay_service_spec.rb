@@ -30,11 +30,15 @@ describe MolpayService do
     end
 
     context 'url contains default country code' do
-      Then{ result.include? 'country=MYR' }
+      Then{ result.include? 'country=MY' }
     end
 
     context 'url contains vcode' do
       Then{ result.include? 'vcode=' + vcode }
+    end
+
+    context 'url contains redirect url' do
+      Then{ result.include? 'returnurl=http://localhost:3000/payments/success'}
     end
 
     def vcode

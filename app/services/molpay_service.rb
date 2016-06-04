@@ -2,7 +2,8 @@ class MolpayService
 
   VERIFY_KEY = 'c6c5cdaabf772a366e1b5ba8a512afac'
   MERCHANT_ID = 'MOLWallet_Dev1'
-  COUNTRY = 'MYR'
+  COUNTRY = 'MY'
+  RETURN_URL = 'http://localhost:3000/payments/success'
   URI = "https://pay.molpay.com/MOLPay/pay/MOLWallet_Dev1/MOLWallet.php?"
 
   def initialize(amount:, order_id:)
@@ -11,7 +12,8 @@ class MolpayService
   end
 
   def build
-    URI+"amount=#{@amount}&orderid=#{@order_id}&country=#{COUNTRY}&vcode="+vcode
+    uri = URI+"amount=#{@amount}&orderid=#{@order_id}&country=#{COUNTRY}&vcode="+vcode
+    uri + "&returnurl=#{RETURN_URL}"
   end
 
   private
