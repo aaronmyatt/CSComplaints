@@ -1,9 +1,9 @@
 <div class="issue-list level">
   <div class="level-left">
     <div class="vote is-inline-block level-item">
-      <a class="vote__up"><i class="fa fa-chevron-up"></i></a>
-      <div class="vote__count">200</div>
-      <a class="vote__down"><i class="fa fa-chevron-down"></i></a>
+      <%= link_to content_tag(:i, "", class: "fa fa-chevron-up"), upvote_path(id: complaint.id), method: :post, remote: true, class: "vote__up" %>
+      <div class="vote__count"><%= complaint.votes_for.size.to_s %></div>
+      <%= link_to content_tag(:i, "", class: "fa fa-chevron-down"), downvote_path(id: complaint.id), method: :post, remote: true, class: "vote__down" %>
     </div>
 
     <div class="issue-list__content is-inline-block level-item">

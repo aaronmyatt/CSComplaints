@@ -10,15 +10,14 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <%= render partial: "layouts/header" %>
+  <%= yield %>
 
 
-<%= yield %>
-
-
-<%= render partial: 'shared/register_modal', locals: {id:'register-modal'} %>
-<%= render partial: 'shared/login_modal', locals: {id:'login-modal'} %>
-<% if current_user %>
-		<%= render partial: 'shared/profile_modal', locals: {id:'profile-modal'} %>
-<% end %>
+  <%= render partial: 'shared/register_modal', locals: {id:'register-modal'} %>
+  <%= render partial: 'shared/login_modal', locals: {id:'login-modal'} %>
+  <% if current_user %>
+  		<%= render partial: 'shared/profile_modal', locals: {id:'profile-modal'} %>
+  <% end %>
 </body>
 </html>
