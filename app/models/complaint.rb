@@ -13,15 +13,13 @@ class Complaint < ActiveRecord::Base
     Complaint.near(self.address, 50, :order => false)
   end
 
-  def fetch_locations
+  def fetch_locations(search = "Kuala Lumpur")
     begin
-      location_results = Geocoder.search("Kuala Lumpur")
+      location_results = Geocoder.search(search)
       locations = []
 
       if location_results.any?
         location_results.each do |location|
-          logger.info location
-
           address = location.formatted_address
           coords = location.geometry['location']
 
