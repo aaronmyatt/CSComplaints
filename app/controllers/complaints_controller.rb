@@ -5,7 +5,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
-    # @complaints = Complaint.nearby
+    @user = current_user if user_signed_in?
   end
 
   # GET /complaints/1
@@ -27,7 +27,7 @@ class ComplaintsController < ApplicationController
   # POST /complaints.json
   def create
     @complaint = Complaint.new(complaint_params)
-    @complaint.user_id = current_user.id if user_signed_in?
+    @complaint.user = current_user
 
     respond_to do |format|
       if @complaint.save

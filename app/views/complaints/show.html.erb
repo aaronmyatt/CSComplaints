@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
-<%= link_to 'Back', complaints_path %>
+<%= link_to 'Back', complaints_path %> |
+<%= link_to 'Upvote', upvote_path(id: @complaint.id), method: :post, remote: true %>

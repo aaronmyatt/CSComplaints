@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604074944) do
+ActiveRecord::Schema.define(version: 20160604092119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,13 +52,15 @@ ActiveRecord::Schema.define(version: 20160604074944) do
   create_table "complaints", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "user_id",     null: false
     t.string   "title",       null: false
     t.text     "description", null: false
     t.string   "address"
-    t.float    "latitude",    null: false
-    t.float    "longitude",   null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
   end
+
+  add_index "complaints", ["user_id"], name: "index_complaints_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -96,4 +98,5 @@ ActiveRecord::Schema.define(version: 20160604074944) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "complaints", "users"
 end
