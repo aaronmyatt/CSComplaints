@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  validates :name, presence: true
+  validates :email, presence: true
+
   has_many :complaints
 
   def self.from_omniauth(auth)
