@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20160604092119) do
     t.string   "title",       null: false
     t.text     "description", null: false
     t.string   "address"
-    t.float    "latitude",    null: false
-    t.float    "longitude",   null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "user_id"
   end
 
