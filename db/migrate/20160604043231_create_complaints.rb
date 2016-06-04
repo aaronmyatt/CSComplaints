@@ -1,0 +1,8 @@
+class CreateComplaints < ActiveRecord::Migration
+  def change
+    create_table :complaints do |t|
+
+      t.timestamps null: false
+    end
+  end
+end
