@@ -1,0 +1,7 @@
+<ul>
+<% if local_assigns[:locations] %>
+  <% locations.each do |location| %>
+    <li data-lat="<%= location[2] %>" data-lng="<%= location[1] %>"><%= location[0] %></option>
+  <% end %>
+<% end %>
+</ul>

@@ -1,29 +1,27 @@
-var delay_search = function(ms, func){
-  window.search_delay = window.setTimeout(func, ms);
-}
-
-function getLocations(){
+function getLocations( search ){
   $.ajax({
     url: "/locations/search",
     dataType: "JSON",
-    method: "post",
+    method: "POST",
     data: { search: search }
   })
   .done(function(data){
-    console.log(data);
+    console.log('asdasd');
+    $("#search_results").html(data);
   });
 }
 
 $(document).on('keyup', '#search', function(){
   var search = $(this).val();
 
-  if(search.length < 3){
+  if(search.length < 4){
     return false;
   }
 
   if(typeof window.search_delay != "undefined"){
     window.clearTimeout(window.search_delay);
+    window.search_delay = undefined;
   }
 
-  delay_search(1000, getLocations());
+  window.search_delay = window.setTimeout(1000, getLocations(search));
 });
