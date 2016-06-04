@@ -5,6 +5,7 @@
 	border-radius: 20px;
 	height: 40px;
 	padding: 0 20px;
+	font-weight: 600;
 
 	&.is-link{
 		text-decoration: none;
@@ -14,10 +15,15 @@
 		border: 2px solid $white;
 		background: transparent;
 		color: $white;
-		font-weight: 600;
 	}
 
-	&.is-inverted{
-		font-weight: 600;
+
+	&.facebook-login{
+		background: #3b5998;
+		color: $white;
+
+		i{
+			margin-right: 5px;
+		}
 	}
 }

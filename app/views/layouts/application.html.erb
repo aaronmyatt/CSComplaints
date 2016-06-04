@@ -3,6 +3,7 @@
 <head>
   <title>CSComplaints</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -12,6 +13,42 @@
 
 
 <%= yield %>
+
+
+<div id="register-modal" class="modal is-small has-text-centered">
+	<div class="modal-background"></div>
+	<div class="modal-card">
+		<div class="modal-card-body">
+			<h2>Create an account</h2>
+
+			<div class="social-login">
+				<a class="button facebook-login is-fullwidth">
+					<i class="fa fa-facebook"></i>
+					Register with Facebook
+				</a>
+			</div>
+
+			<div class="divider-container">
+			<div class="divider-container__line"></div>
+			<div class="divider-container__text">OR</div>
+			</div>
+
+			<form>
+				<input class="input" type="text" placeholder="Name" />
+				<input class="input" type="email" placeholder="Email" />
+				<input class="input" type="password" placeholder="Password" />
+
+				<input class="button is-fullwidth is-primary" type="submit" value="Register">
+			</form>
+
+
+
+		</div>
+	</div>
+	<button class="modal-close"></button>
+</div>
+
+	
 
 </body>
 </html>
