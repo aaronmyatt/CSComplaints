@@ -1,0 +1,2 @@
+module UpvoteHelper
+end
