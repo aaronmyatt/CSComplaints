@@ -1,0 +1,58 @@
+
+@import "../base/colors";
+
+.modal{
+
+	&.is-small{
+		.modal-card{
+			width: 400px;
+			padding: 30px 20px;
+		}
+	}
+
+	h2{
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	form, .social-login{
+		padding: 0 20px;
+	}
+
+	form input[type=submit]{
+		margin-top: 10px;
+	}
+
+	.input{
+		margin-bottom: 10px;
+	}
+
+	.divider-container{
+		position: relative;
+		height: 70px;
+
+		&__line{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			height: 1px;
+			width: 90%;
+			background: #ddd;
+		}
+
+		&__text{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-weight: 700;
+			font-size: 14px;
+			color: $gray;
+			background: $white;
+			width: 50px;
+		}
+	}
+
+}
