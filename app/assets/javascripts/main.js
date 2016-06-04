@@ -28,4 +28,11 @@ $(document).ready(function(){
 		},
 		nav: true
 	});
+
+$(document).on('click', '#profile-btn', function(){
+	$("#profile-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#profile-modal .modal-close', function(){
+	$("#profile-modal").toggleClass("is-active");
 });

@@ -10,73 +10,14 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <%= render partial: "layouts/header" %>
+  <%= yield %>
 
 
-<%= yield %>
-
-
-<div id="register-modal" class="modal is-small has-text-centered">
-	<div class="modal-background"></div>
-	<div class="modal-card">
-		<div class="modal-card-body">
-			<h2>Create an account</h2>
-
-			<div class="social-login">
-				<a class="button facebook-login is-fullwidth">
-					<i class="fa fa-facebook"></i>
-					Register with Facebook
-				</a>
-			</div>
-
-			<div class="divider-container">
-			<div class="divider-container__line"></div>
-			<div class="divider-container__text">OR</div>
-			</div>
-
-			<form>
-				<input class="input" type="text" placeholder="Name" />
-				<input class="input" type="email" placeholder="Email" />
-				<input class="input" type="password" placeholder="Password" />
-
-				<input class="button is-fullwidth is-primary" type="submit" value="Register with Email">
-			</form>
-
-		</div>
-	</div>
-	<button class="modal-close"></button>
-</div>
-
-<div id="login-modal" class="modal is-small has-text-centered">
-	<div class="modal-background"></div>
-	<div class="modal-card">
-		<div class="modal-card-body">
-			<h2>Welcome back</h2>
-
-			<div class="social-login">
-				<a class="button facebook-login is-fullwidth">
-					<i class="fa fa-facebook"></i>
-					Sign in with Facebook
-				</a>
-			</div>
-
-			<div class="divider-container">
-			<div class="divider-container__line"></div>
-			<div class="divider-container__text">OR</div>
-			</div>
-
-			<form>
-				<input class="input" type="email" placeholder="Email" />
-				<input class="input" type="password" placeholder="Password" />
-
-				<input class="button is-fullwidth is-primary" type="submit" value="Sign in with Email">
-			</form>
-			
-		</div>
-	</div>
-	<button class="modal-close"></button>
-</div>
-
-	
-
+  <%= render partial: 'shared/register_modal', locals: {id:'register-modal'} %>
+  <%= render partial: 'shared/login_modal', locals: {id:'login-modal'} %>
+  <% if current_user %>
+  		<%= render partial: 'shared/profile_modal', locals: {id:'profile-modal'} %>
+  <% end %>
 </body>
 </html>

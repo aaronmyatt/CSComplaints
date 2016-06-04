@@ -15,6 +15,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
+    @locations = Location.new.fetch_locations
   end
 
   # GET /complaints/1/edit
@@ -25,6 +26,7 @@ class ComplaintsController < ApplicationController
   # POST /complaints.json
   def create
     @complaint = Complaint.new(complaint_params)
+    @complaint.user = current_user
 
     respond_to do |format|
       if @complaint.save
@@ -69,6 +71,6 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.fetch(:complaint, {})
+      params.require(:complaint).permit( :title, :description, :address, :latitude, :longitude )
     end
 end

@@ -1,3 +1,4 @@
+
 <nav class="nav">
     <div class="container">
       <div class="nav-right">
@@ -118,4 +119,13 @@
 
 <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
 <%= link_to 'Back', complaints_path %>
+
+
+<section class="section">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    
+    <%= render partial: "complaint_item", locals: { complaint: @complaint } %>
+  </div>
+</section>
  -->
