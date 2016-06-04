@@ -1,3 +1,4 @@
+ruby '2.2.4'
 source 'https://rubygems.org'
 
 
@@ -30,6 +31,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise'
+gem 'acts_as_votable', '~> 0.10.0'
+
+# Administration stuff
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'geocoder'
 
@@ -41,6 +46,7 @@ gem 'geocoder'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
