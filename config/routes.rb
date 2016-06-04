@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :complaints
 
-  post "locations/search", controller: "locations", action: "search", as: :location_search
+  get "locations/search", controller: "locations", action: "search", as: :location_search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
