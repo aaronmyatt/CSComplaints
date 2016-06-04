@@ -1,0 +1,16 @@
+<div id="<%= id %>" class="modal is-small has-text-centered">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <div class="modal-card-body">
+      <h2>Sign up with Facebook</h2>
+
+      <%= render partial: 'shared/facebook', locals: {text: 'Login with Facebook'} %>
+
+      <%= render partial: 'shared/or' %>
+
+      <%= render partial: 'shared/login_form' %>
+
+    </div>
+  </div>
+  <button class="modal-close"></button>
+</div>
