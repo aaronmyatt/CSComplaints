@@ -12,12 +12,24 @@
   <% end %>
 
   <div>
-  <%= f.label "title", "Title" %><br />
-  <%= f.text_field :title %>
+    <%= f.label "title", "Title" %><br />
+    <%= f.text_field :title %>
   </div>
+
   <div>
-  <%= f.label "description", "Description" %><br />
-  <%= f.text_area :description %>
+    <%= f.label "description", "Description" %><br />
+    <%= f.text_area :description %>
+  </div>
+  
+  <div>
+    <%= f.label "location", "Location" %><br />
+    <input type="search" id="location" placeholder="Kuala Lumpur">
+
+    <ul id="search-results">
+      <% @locations.each do |location| %>
+        <li data-lat="<%= location[2] %>" data-lng="<%= location[1] %>"><%= location[0] %></option>
+      <% end %>
+    </ul>
   </div>
 
   <div class="actions">

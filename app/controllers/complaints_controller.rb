@@ -6,6 +6,7 @@ class ComplaintsController < ApplicationController
   def index
     @complaints = Complaint.all
     # @complaint.get_locations("Kuala Lumpur")
+
   end
 
   # GET /complaints/1
@@ -16,7 +17,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
-    @complaint.user_id = current_user.id if user_signed_in?
+    @locations = @complaint.fetch_locations
   end
 
   # GET /complaints/1/edit
@@ -27,6 +28,7 @@ class ComplaintsController < ApplicationController
   # POST /complaints.json
   def create
     @complaint = Complaint.new(complaint_params)
+    @complaint.user_id = current_user.id if user_signed_in?
 
     respond_to do |format|
       if @complaint.save
