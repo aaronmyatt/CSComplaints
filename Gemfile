@@ -33,6 +33,9 @@ gem 'omniauth-facebook'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
 
+# Administration stuff
+gem 'activeadmin', github: 'activeadmin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
