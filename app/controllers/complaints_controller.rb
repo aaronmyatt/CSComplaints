@@ -5,6 +5,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
+    # @complaint.get_locations("Kuala Lumpur")
   end
 
   # GET /complaints/1
@@ -15,6 +16,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
+    @complaint.user_id = current_user.id if user_signed_in?
   end
 
   # GET /complaints/1/edit
@@ -69,6 +71,6 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.fetch(:complaint, {})
+      params.require(:complaint).permit( :title, :description )
     end
 end
