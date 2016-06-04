@@ -53,10 +53,14 @@ group :test do
   gem 'rspec-given'
 end
 
-group :development, :test do
+group :test, :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-rails'
+end
+
+group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
