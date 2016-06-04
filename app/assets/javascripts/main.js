@@ -19,3 +19,11 @@ $(document).on('click', '#login-btn', function(){
 $(document).on('click', '#login-modal .modal-close', function(){
 	$("#login-modal").toggleClass("is-active");
 });
+
+$(document).on('click', '#profile-btn', function(){
+	$("#profile-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#profile-modal .modal-close', function(){
+	$("#profile-modal").toggleClass("is-active");
+});
