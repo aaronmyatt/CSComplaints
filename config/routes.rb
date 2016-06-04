@@ -26,7 +26,4 @@ Rails.application.routes.draw do
 
   post '/payments/send' => 'payments#send', as: :payments_send
   post '/payments/success' => 'payments#success', as: :payments_success
-
-  # You can have the root of your site routed with "root"
-  root 'complaints#index'
 end
