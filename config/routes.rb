@@ -14,6 +14,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   post '/upvote' => 'upvote#upvote', as: :upvote
 
+  post '/downvote' => 'upvote#downvote', as: :downvote
+  # You can have the root of your site routed with "root"
+  root 'complaints#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
   post '/payments/send' => 'payments#send', as: :payments_send
   post '/payments/success' => 'payments#success', as: :payments_success
 

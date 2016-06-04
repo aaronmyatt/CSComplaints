@@ -9,5 +9,4 @@ class ApplicationController < ActionController::Base
   def set_user
     @user = current_user if user_signed_in?
   end
-
 end
