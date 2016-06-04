@@ -1,6 +1,5 @@
-<form>
-  <input class="input" type="email" placeholder="Email" />
-  <input class="input" type="password" placeholder="Password" />
-
-  <input class="button is-fullwidth is-primary" type="submit" value="Sign in with Email">
-</form>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),remote: true, format: :json) do |f| %>
+  <%= f.email_field :email, autofocus: true, class: "input", placeholder: "Email" %>
+  <%= f.password_field :password, autocomplete: "off", class: "input", placeholder: "Password" %>
+  <%= f.submit "Sign in with Email", class: "button is-fullwidth is-primary" %>
+<% end %>

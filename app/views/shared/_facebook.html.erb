@@ -1,5 +1,5 @@
 <div class="social-login">
-  <a class="button facebook-login is-fullwidth">
+  <a class="button facebook-login is-fullwidth" href= '<%= omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first) %> '>
     <i class="fa fa-facebook"></i>
     <%= text %>
   </a>
