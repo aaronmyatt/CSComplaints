@@ -5,8 +5,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
-    # @complaint.get_locations("Kuala Lumpur")
-
+    # @complaints = Complaint.nearby
   end
 
   # GET /complaints/1
@@ -17,7 +16,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
-    @locations = @complaint.fetch_locations
+    @locations = Location.new.fetch_locations
   end
 
   # GET /complaints/1/edit
@@ -63,11 +62,6 @@ class ComplaintsController < ApplicationController
       format.html { redirect_to complaints_url, notice: 'Complaint was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def location_search
-    search = params[:search]
-    
   end
 
   private
