@@ -1,4 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_filter :configure_permitted_parameters
+
 
   def create
     build_resource(sign_up_params)
@@ -23,5 +25,12 @@ class RegistrationsController < Devise::RegistrationsController
   def sign_up(resource_name, resource)
     sign_in(resource_name, resource)
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+
 
 end
