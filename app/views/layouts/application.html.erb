@@ -22,9 +22,9 @@
 			<h2>Create an account</h2>
 
 			<div class="social-login">
-				<a class="button facebook-login is-fullwidth">
+				<a class="button facebook-login is-fullwidth" href= '<%= omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first) %> '>
 					<i class="fa fa-facebook"></i>
-					Register with Facebook
+					 Register With Facebook
 				</a>
 			</div>
 
@@ -33,13 +33,14 @@
 			<div class="divider-container__text">OR</div>
 			</div>
 
-			<form>
-				<input class="input" type="text" placeholder="Name" />
-				<input class="input" type="email" placeholder="Email" />
-				<input class="input" type="password" placeholder="Password" />
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.text_field :name, autofocus: true, class: 'input', placeholder: "Name" %>
+				<%= f.email_field :email, class: 'input', placeholder: "Email" %>
+				<%= f.password_field :password_confirmation, class: 'input', autocomplete: "off", placeholder: "Password" %>
 
-				<input class="button is-fullwidth is-primary" type="submit" value="Register with Email">
-			</form>
+				<%= f.submit "Register with Email", class: "button is-fullwidth is-primary" %>
+			<% end %>
 
 		</div>
 	</div>
@@ -70,13 +71,13 @@
 
 				<input class="button is-fullwidth is-primary" type="submit" value="Sign in with Email">
 			</form>
-			
+
 		</div>
 	</div>
 	<button class="modal-close"></button>
 </div>
 
-	
+
 
 </body>
 </html>
