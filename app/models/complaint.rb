@@ -11,7 +11,7 @@ class Complaint < ActiveRecord::Base
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
-  def nearby
-    Complaint.near(self.address, 50, :order => false)
+  def nearby(location = "Kuala Lumpur")
+    Complaint.near(location, 50, :order => false)
   end
 end
