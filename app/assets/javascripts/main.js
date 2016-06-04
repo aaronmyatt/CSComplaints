@@ -11,3 +11,11 @@ $(document).on('click', '#register-btn', function(){
 $(document).on('click', '#register-modal .modal-close', function(){
 	$("#register-modal").toggleClass("is-active");
 });
+
+$(document).on('click', '#login-btn', function(){
+	$("#login-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#login-modal .modal-close', function(){
+	$("#login-modal").toggleClass("is-active");
+});
