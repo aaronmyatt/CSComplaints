@@ -33,11 +33,12 @@
 			<div class="divider-container__text">OR</div>
 			</div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name),remote: true, format: :json) do |f| %>
         <%= devise_error_messages! %>
         <%= f.text_field :name, autofocus: true, class: 'input', placeholder: "Name" %>
 				<%= f.email_field :email, class: 'input', placeholder: "Email" %>
-				<%= f.password_field :password_confirmation, class: 'input', autocomplete: "off", placeholder: "Password" %>
+        <%= f.password_field :password, class: 'input', placeholder: 'Password', autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, class: 'input', autocomplete: "off", placeholder: "Confirm Password" %>
 
 				<%= f.submit "Register with Email", class: "button is-fullwidth is-primary" %>
 			<% end %>
@@ -54,7 +55,7 @@
 			<h2>Welcome back</h2>
 
 			<div class="social-login">
-				<a class="button facebook-login is-fullwidth">
+        <a class="button facebook-login is-fullwidth" href= '<%= omniauth_authorize_path(resource_name, resource_class.omniauth_providers.first) %> '>
 					<i class="fa fa-facebook"></i>
 					Sign in with Facebook
 				</a>
@@ -65,12 +66,12 @@
 			<div class="divider-container__text">OR</div>
 			</div>
 
-			<form>
-				<input class="input" type="email" placeholder="Email" />
-				<input class="input" type="password" placeholder="Password" />
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name),remote: true, format: :json) do |f| %>
+        <%= f.email_field :email, autofocus: true, class: "input", placeholder: "Email" %>
+        <%= f.password_field :password, autocomplete: "off", class: "input", placeholder: "Password" %>
 
 				<input class="button is-fullwidth is-primary" type="submit" value="Sign in with Email">
-			</form>
+      <% end %>
 
 		</div>
 	</div>
