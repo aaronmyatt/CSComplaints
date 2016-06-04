@@ -1,0 +1,23 @@
+
+@import "../base/colors";
+
+.button{
+	border-radius: 20px;
+	height: 40px;
+	padding: 0 20px;
+
+	&.is-link{
+		text-decoration: none;
+	}
+
+	&.is-white-outline{
+		border: 2px solid $white;
+		background: transparent;
+		color: $white;
+		font-weight: 600;
+	}
+
+	&.is-inverted{
+		font-weight: 600;
+	}
+}

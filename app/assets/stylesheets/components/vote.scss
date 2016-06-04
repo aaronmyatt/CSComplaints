@@ -1,0 +1,19 @@
+
+@import "../base/colors";
+
+.vote{
+	width: 100px;
+	text-align: center;
+
+	&__up, &__down{
+		color: $gray;
+
+		&:hover{
+			color: $primary;
+		}
+	}
+
+	&__count{
+		color: $dark-gray;
+	}
+}
