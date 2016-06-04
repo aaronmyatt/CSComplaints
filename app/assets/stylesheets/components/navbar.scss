@@ -1,0 +1,14 @@
+
+@import "../base/colors";
+
+nav.nav{
+
+	.button{
+		margin-top: 5px;
+	}
+
+	.button.is-link{
+		color: $white;
+		font-weight: bold;
+	}
+}

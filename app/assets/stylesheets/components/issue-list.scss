@@ -1,0 +1,26 @@
+
+
+.container{
+	width: 70% !important;
+}
+
+.issue-list{
+	padding: 10px 0;
+
+	&__content{
+		p{
+			font-style: italic;
+
+			i{
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&__raised{
+		span{
+			font-weight: 700;
+			font-size: 15px;
+		}
+	}
+}

@@ -5,6 +5,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
+    @user = current_user if user_signed_in?
     # @complaint.get_locations("Kuala Lumpur")
   end
 
