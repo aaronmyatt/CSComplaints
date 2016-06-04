@@ -1,0 +1,13 @@
+<% if local_assigns[:locations] %>
+    <%= hidden_field_tag "complaint[latitude]", "0" %>
+    <%= hidden_field_tag "complaint[longitude]", "0" %>
+
+  <p class="control">
+  <% locations.each_with_index do |location, index| %>
+    <label class="radio m-t-10">
+      <%= radio_button_tag "complaint[address]", location[0], false, class: "address-selector", id: "address-#{index}", data: { "lat": location[1], "lng": location[2] } %>
+      <%= location[0] %>
+    </label><br />
+  <% end %>
+  </p>
+<% end %>
