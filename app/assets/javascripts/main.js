@@ -19,3 +19,13 @@ $(document).on('click', '#login-btn', function(){
 $(document).on('click', '#login-modal .modal-close', function(){
 	$("#login-modal").toggleClass("is-active");
 });
+
+$(document).ready(function(){
+	$(".photo-slider").unslider({
+		arrows:{
+			prev: '<a class="unslider-arrow prev"><i class="fa fa-chevron-left"></i></a>',
+			next: '<a class="unslider-arrow next"><i class="fa fa-chevron-right"></i></a>'
+		},
+		nav: true
+	});
+});
