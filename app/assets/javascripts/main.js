@@ -27,3 +27,8 @@ $(document).on('click', '#profile-btn', function(){
 $(document).on('click', '#profile-modal .modal-close', function(){
 	$("#profile-modal").toggleClass("is-active");
 });
+
+$(document).on('click', '#pay-btn', function(){
+	var form = $(this).parent().siblings()[1];
+	$(form).toggleClass("is-hidden");
+});
