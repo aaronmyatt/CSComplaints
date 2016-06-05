@@ -1,4 +1,6 @@
 class Complaint < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   geocoded_by :address
   belongs_to :user
   acts_as_votable
