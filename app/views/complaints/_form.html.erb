@@ -31,21 +31,19 @@
 
        <label class="label">Add Images</label>
       <div class="control file-upload">
-        <input type="file">
+        <input type="file" name="image">
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
         <label><i class="fa fa-upload"></i> Upload Images</label>
       </div>
     </div>
   </div>
 
-  <%= label_tag :image, "Image (optional)", class: "label m-t-10" %>
-  <%= f.file_field :image %>
-  <%= f.hidden_field :image_cache %>
-
-  <p class="control">
-    <%= image_tag(@complaint.image.thumb, size: '150', class: 'm-t-20') if @complaint.image.present? %>
-  </p>
-
   <% if @complaint.image.present? %>
+    <p class="control">
+      <%= image_tag(@complaint.image.thumb, size: '150', class: 'm-t-20') %>
+    </p>
+
     <p class="control">
       <label class='radio'>
         <%= f.check_box :remove_image, class: "checkbox" %>

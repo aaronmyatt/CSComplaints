@@ -1,26 +1,12 @@
 <div class="issue-list level">
-  <div class="level-left">
-    <div class="vote is-inline-block level-item">
-      <a class="vote__up upvote_arrow" data-complaint-id='<%=complaint.id%>'><i class="fa fa-chevron-up"></i></a>
-      <div class="vote__count" id="vote_count_<%=complaint.id%>"><%= complaint.total_votes %></div>
-      <a class="vote__down downvote_arrow" data-complaint-id='<%=complaint.id%>'><i class="fa fa-chevron-down"></i></a>
-    </div>
-
-    <div class="issue-list__content is-inline-block level-item">
-      <%= link_to complaint do %>
-        <h4><%= complaint.title %></h4>
-      <% end %>
-      <p><i class="fa fa-map-marker"></i> <%= complaint.address %></p>
-    </div>
-  </div>
+  <%= render partial: 'complaint_item_details', locals: {complaint: complaint} %>
   <div class="level-right">
     <a class="button is-link is-inverted" id="pay-btn">Back this cause</a>
     <div class="issue-list__raised level-item">
       <p>Raised <span>RM <%= complaint.total_amount.to_s %></span></p>
     </div>
+    <div id="" class="is-hidden complaint-payment-form">
+      <%= render partial: 'payments/payment_form', locals: {complaint: complaint} %>
+    </div>
   </div>
-  <div id="" class="is-hidden complaint-payment-form">
-    <%= render partial: 'payments/payment_form', locals: {complaint: complaint} %>
-  </div>
-
 </div>
