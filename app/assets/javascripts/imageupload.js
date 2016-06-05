@@ -12,4 +12,4 @@ var droppedFiles = false;
   })
   .on('drop', function(e) {
     droppedFiles = e.originalEvent.dataTransfer.files;
-  });
+});
