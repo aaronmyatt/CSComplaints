@@ -32,6 +32,7 @@ $(document).on('click', '#register-modal .modal-close', function(){
 $(document).on('click', '#login-btn', function(){
 	$("#login-modal").toggleClass("is-active");
 	$("form#login_user_form").bind("ajax:success", function(e, data, status, xhr) {
+		console.log(data.success)
 		if (data.success) {
 			$("#login-modal").toggleClass("is-active");
 		} else {
