@@ -1,0 +1,38 @@
+
+.unslider{
+	position: relative;
+}
+
+.unslider-arrow{
+	top: 200px;
+	font-size: 20px;
+	color: rgba(0,0,0,0.5);
+}
+
+.unslider-nav{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 0);
+
+	ol{
+		li{
+			border: 0 !important;
+			background: rgba(0, 0, 0, 0.5) !important;
+
+			&.unslider-active{
+				background: #000 !important;
+			}
+		}
+	}
+}
+
+.photo-slider{
+	margin-bottom: 40px;
+
+	ul li img{
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+	}
+}

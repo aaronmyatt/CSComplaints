@@ -5,6 +5,11 @@
 	width: 100px;
 	text-align: center;
 
+	&--small{
+		width: auto;
+		margin-right: 20px !important;
+	}
+
 	&__up, &__down{
 		color: $gray;
 
