@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", :registrations => 'registrations' }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", :registrations => 'registrations', :sessions => 'sessions' }
   resources :users
   resources :complaints
 
