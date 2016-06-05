@@ -38,6 +38,14 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'geocoder'
 
+# file uploads to S3
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave' # '0.10.0'
+gem 'fog', '~> 1.37.0'
+
+# image resizing for S3 uploads
+gem 'mini_magick'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
