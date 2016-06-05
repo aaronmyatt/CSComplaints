@@ -10,7 +10,7 @@ $(function() {
         dataType: 'JSON',
         success: function(data, status){
           vote_count = '#vote_count_'+id
-          $(vote_count).text(data["upvotes"])
+          $(vote_count).text(data["upvotes"]).fadeOut(300).fadeIn(300)
         }
       });
   });
