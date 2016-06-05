@@ -1,13 +1,3 @@
-
-<nav class="nav">
-    <div class="container">
-      <div class="nav-right">
-        <a class="button is-link" id="login-btn">Sign In</a>
-        <a class="button is-primary is-inverted" id="register-btn">Register</a>
-      </div>
-    </div>
-  </nav>
-
  <section class="section">
 	<div class="container">
 		<div class="issue-list level">
@@ -15,13 +5,13 @@
 	      <div class="level-left">
 	        <div class="vote vote--small is-inline-block level-item">
 	          <a class="vote__up"><i class="fa fa-chevron-up"></i></a>
-	          <div class="vote__count">200</div>
+	          <div class="vote__count"><%= @complaint.total_votes %></div>
 	          <a class="vote__down"><i class="fa fa-chevron-down"></i></a>
 	        </div>
 
 	        <div class="issue-list__content is-inline-block level-item">
-	          <h4>Title of issue</h4>
-	          <p><i class="fa fa-map-marker"></i> Location</p>
+	          <h4><%= @complaint.title %></h4>
+	          <p><i class="fa fa-map-marker"></i> <%= @complaint.address %></p>
 	        </div>
 	      </div>
 
@@ -36,38 +26,23 @@
 				<div class="photo-slider">
 					<ul>
 						<li><img src="#" /></li>
-						<li><img src="#" /></li>
-						<li><img src="#" /></li>
-						<li><img src="#" /></li>
 					</ul>
 				</div>
 
 				<div class="issue-description">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<%= simple_format @complaint.description %>
 				</div>
 
 			</div>
 			<div class="column">
 				<div class="issue-support">
 					<div class="issue-support__block">
-						<h1>123</h1>
+						<h1><%= @complaint.supporters.size %></h1>
 						<h4>Supporters</h4>
 					</div>
 
 					<div class="issue-support__block">
-						<h1>RM 230</h1>
+						<h1>RM <%= @complaint.total_amount %></h1>
 						<h4>Pledged</h4>
 					</div>
 
