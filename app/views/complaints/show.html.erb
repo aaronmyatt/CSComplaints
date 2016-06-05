@@ -1,6 +1,3 @@
-
-
-
  <section class="section">
 	<div class="container">
 		<div class="issue-list level">
@@ -8,13 +5,13 @@
 	      <div class="level-left">
 	        <div class="vote vote--small is-inline-block level-item">
 	          <a class="vote__up"><i class="fa fa-chevron-up"></i></a>
-	          <div class="vote__count">200</div>
+	          <div class="vote__count"><%= @complaint.total_votes %></div>
 	          <a class="vote__down"><i class="fa fa-chevron-down"></i></a>
 	        </div>
 
 	        <div class="issue-list__content is-inline-block level-item">
-	          <h4>Title of issue</h4>
-	          <p><i class="fa fa-map-marker"></i> Location</p>
+	          <h4><%= @complaint.title %></h4>
+	          <p><i class="fa fa-map-marker"></i> <%= @complaint.address %></p>
 	        </div>
 	      </div>
 
@@ -29,39 +26,24 @@
 
 				<div class="photo-slider">
 					<ul>
-						<li><img src="#" /></li>
-						<li><img src="#" /></li>
-						<li><img src="#" /></li>
-						<li><img src="#" /></li>
+				    <%= content_tag :li, image_tag(@complaint.image) if @complaint.image.present? %>
 					</ul>
 				</div>
 
 				<div class="issue-description">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<%= simple_format @complaint.description %>
 				</div>
 
 			</div>
 			<div class="column">
 				<div class="issue-support">
 					<div class="issue-support__block">
-						<h1>123</h1>
+						<h1><%= @complaint.supporters.size %></h1>
 						<h4>Supporters</h4>
 					</div>
 
 					<div class="issue-support__block">
-						<h1>RM 230</h1>
+						<h1>RM <%= @complaint.total_amount %></h1>
 						<h4>Pledged</h4>
 					</div>
 
@@ -137,9 +119,17 @@
 
 <section class="section">
   <div class="container">
-    <p id="notice"><%= notice %></p>
-    
     <%= render partial: "complaint_item", locals: { complaint: @complaint } %>
+
+    <div class="issue-list level">
+      <div class="level-left complaint-img">
+        <%= link_to image_tag(@complaint.image.icon, size: '64'), asset_url(@complaint.image), target: '_blank' if @complaint.image.present? %>
+      </div>
+
+      <div class="issue-list__content is-inline-block level-item">
+        <%= simple_format @complaint.description %>
+      </div>
+    </div>
   </div>
 </section>
  -->
