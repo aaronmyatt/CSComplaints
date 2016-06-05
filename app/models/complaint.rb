@@ -1,6 +1,6 @@
 class Complaint < ActiveRecord::Base
   mount_uploader :image, ImageUploader
-
+  paginates_per 10
   geocoded_by :address
   belongs_to :user
   acts_as_votable
@@ -27,4 +27,3 @@ class Complaint < ActiveRecord::Base
     self.votes_for.size
   end
 end
-
