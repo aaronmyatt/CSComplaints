@@ -13,19 +13,25 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_field :name %>
+          <!-- <%= f.label :name, :class=>'label' %><br> -->
+          <p class="control has-icon">
+            <%= f.text_field :name, :class=>'input' %>
+            <i class="fa fa-user"></i>
+          </p>
         </div>
         <div class="field">
-          <%= f.label :email %><br>
-          <%= f.text_field :email %>
+          <!-- <%= f.label :email %> -->
+          <p class="control has-icon">
+            <%= f.text_field :email, :class=>'input' %>
+            <i class="fa fa-envelope"></i>
+          </p>
         </div>
         <div class="actions">
-          <%= f.button 'Update' %>
+          <%= f.button 'Update Details', :class=>'button is-primary' %>
         </div>
     <% end %>
 
     <div class="actions">
-    <%= f.submit %>
+    <!--<%= f.submit %>-->
   </div>
 <% end %>

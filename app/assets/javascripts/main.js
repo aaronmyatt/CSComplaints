@@ -43,6 +43,14 @@ $(document).on('click', '#login-modal .modal-close', function(){
 	$("#login-modal").toggleClass("is-active");
 });
 
+$(document).on('click', '#support-btn', function(){
+	$("#support-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#support-modal .modal-close', function(){
+	$("#support-modal").toggleClass("is-active");
+});
+
 $(document).ready(function(){
 	$(".photo-slider").unslider({
 		arrows:{
@@ -51,6 +59,10 @@ $(document).ready(function(){
 		},
 		nav: true
 	});
+});
+
+$(document).on('click', '#profile-btn', function(){
+	$("#profile-modal").toggleClass("is-active");
 });
 
 $(document).on('click', '#pay-btn', function(){
