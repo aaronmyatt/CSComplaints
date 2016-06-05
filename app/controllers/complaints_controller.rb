@@ -6,7 +6,6 @@ class ComplaintsController < ApplicationController
   # GET /complaints.json
   def index
     @complaints = Complaint.all
-    # @complaint.get_locations("Kuala Lumpur")
   end
 
   # GET /complaints/1
@@ -17,7 +16,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
-    @complaint.user_id = current_user.id if user_signed_in?
+    @locations = Location.new.fetch_locations
   end
 
   # GET /complaints/1/edit
@@ -29,6 +28,7 @@ class ComplaintsController < ApplicationController
   def create
     @complaint = Complaint.new(complaint_params)
     @complaint.user = current_user
+
     respond_to do |format|
       if @complaint.save
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
@@ -72,7 +72,7 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.require(:complaint).permit( :title, :description )
+      params.require(:complaint).permit( :title, :description, :address, :latitude, :longitude )
     end
 
     def set_user

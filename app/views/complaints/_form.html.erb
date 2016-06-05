@@ -11,16 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-  <%= f.label "title", "Title" %><br />
-  <%= f.text_field :title %>
-  </div>
-  <div>
-  <%= f.label "description", "Description" %><br />
-  <%= f.text_area :description %>
+  <%= f.label "title", "Title", class: 'label' %>
+  <p class="control"><%= f.text_field :title, class: 'input' %></p>
+
+  <%= f.label "description", "Description", class: 'label' %>
+  <p class="control"><%= f.text_area :description, class: 'textarea' %></p>
+  
+  <%= f.label "location", "Location", class: 'label' %>
+  <p class="control"><input type="text" class="input" id="search" placeholder="Kuala Lumpur"></p>
+
+  <div id="search_results">
+    <%= render "shared/search_results", locations: @locations %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <p class="control m-t-20">
+    <%= f.submit "Submit", class: 'button is-primary' %>
+    <%= link_to "Cancel", complaints_path, class: 'button is-link' %>
+  </p>
 <% end %>

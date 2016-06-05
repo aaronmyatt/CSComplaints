@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", :registrations => 'registrations' }
   resources :users
   resources :complaints
+
+  get "locations/search", controller: "locations", action: "search", as: :location_search
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   post '/upvote' => 'upvote#upvote', as: :upvote
+  post '/downvote' => 'upvote#downvote', as: :downvote
   # You can have the root of your site routed with "root"
   root 'complaints#index'
 
