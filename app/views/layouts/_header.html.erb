@@ -1,11 +1,13 @@
-<section class="hero is-medium is-primary">
-  <%= render partial: 'layouts/nav' %>
-  
-  <div class="hero-body has-text-centered">
-    <h1 class="title">Crowd-sourced complaints</h1>
-    <h2 class="subtitle">Subtitle</h2>
-
-    <%= link_to "How it works", "", class: "button is-white-outline is-outlined" %>
-    <%= link_to "Submit Issue", new_complaint_path, class: "button is-primary is-inverted" %>
+<nav class="hero-head nav">
+  <div class="container">
+    <div class="nav-right">
+      <% if current_user %>
+          <a class="button is-link is-inverted" id="profile-btn">Profile</a>
+          <a class="button is-primary is-inverted" id="register-btn">Logout</a>
+      <% else %>
+          <a class="button is-link" id="login-btn">Sign In</a>
+          <a class="button is-primary is-inverted" id="register-btn">Register</a>
+      <% end %>
+    </div>
   </div>
-</section>
+</nav>

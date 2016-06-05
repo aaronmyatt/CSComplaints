@@ -1,3 +1,15 @@
+<section class="hero is-medium is-primary">
+<!-- 
+  <%= render partial: 'layouts/nav' %> -->
+  
+  <div class="hero-body has-text-centered">
+    <h1 class="title">Crowd-sourced complaints</h1>
+    <h2 class="subtitle">Subtitle</h2>
+
+    <%= link_to "How it works", "", class: "button is-white-outline is-outlined" %>
+    <%= link_to "Submit Issue", new_complaint_path, class: "button is-primary is-inverted" %>
+  </div>
+</section>
 <section class="section">
   <div class="container">
       <%= render partial: 'complaint_item', collection: @complaints, as: :complaint %>

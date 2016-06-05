@@ -1,5 +1,47 @@
+
+@import "../base/colors";
+
 .input{
 	height: 40px;
 	padding: 0 20px;
 	box-shadow: none;
+}
+
+.control.has-icon > .fa{
+	top: 7px;
+}
+
+.control.has-icon .input:focus+.fa{
+	color: $primary;
+}
+
+.control{
+	padding: 0 0 20px;
+}
+
+#search_results .control{
+	padding: 0 0 40px 0;
+}
+
+.file-upload{
+
+	input{
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	input + label{
+		border-radius: 20px;
+	    font-weight: 700;
+	    color: $primary;
+	    background: transparent;
+	    border: 1px solid $primary;
+	    display: inline-block;
+	    padding: 7px 15px;
+	}
+
+	input:focus + label, input + label:hover {
+	    background-color: $primary;
+	    color: $white;
+	}
 }

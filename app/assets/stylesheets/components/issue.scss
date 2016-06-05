@@ -120,7 +120,20 @@
 	}
 }
 
+.share{
+	i{
+		font-size: 20px;
+		margin-left: 15px;
 
+		&.fa-facebook{
+			color: #3b5998;
+		}
+
+		&.fa-twitter{
+			color: #55acee;
+		}
+	}
+}
 
 
 
