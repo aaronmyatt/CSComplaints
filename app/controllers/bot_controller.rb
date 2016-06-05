@@ -1,15 +1,21 @@
 class BotController < ActionController::Base
   def facebook
-    response =
-        {
-          "speech": "Barack Hussein Obama II is the 44th and current President of the United States.",
-          "displayText": "Barack Hussein Obama II is the 44th and current President of the United States, and the first African American to hold the office. Born in Honolulu, Hawaii, Obama is a graduate of Columbia University   and Harvard Law School, where ",
-          "data": "",
-          "contextOut": [{"name":"weather", "lifespan":2, "parameters":{"city":"Rome"}}],
-          "source": "DuckDuckGo"
-        }
-    respond_to do |format|
-      format.json {render json: response }
-    end
+        complaint = Complaint.new
+        complaint.description = params[:result][:parameters][:Complaint][:complaint]
+        complaint.title = "Test complaint"
+        complaint.address = params[:result][:parameters][:Complaint][:location]
+        complaint.user_id = 1
+        complaint.save!
+
+        response =
+            {
+              "speech": "Your complaint has been registered",
+              "displayText": "Thanks for your complaint, you can find it at the link here: http://cscomplaints.herokuapp.com/complaints/#{complaint.id}",
+              "data": "",
+              "contextOut": [{"name":"weather", "lifespan":2, "parameters":{"city":"Rome"}}],
+              "source": "DuckDuckGo"
+            }
+
+  render json: response
   end
 end
