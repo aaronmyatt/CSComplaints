@@ -63,5 +63,5 @@ $(document).ready(function(){
 
 $(document).on('click', '#pay-btn', function(){
 	var form = $(this).first().siblings()[1];
-	$(form).toggleClass("is-active");
+	$(form).toggleClass("is-hidden");
 });

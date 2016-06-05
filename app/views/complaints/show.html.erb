@@ -12,7 +12,7 @@
 				</div>
 				<% end %>
 
-				<div class="issue-description">
+				<div class="issue-description <%= 'm-t-20' unless @complaint.image.present? %>">
 					<%= simple_format @complaint.description %>
 				</div>
 

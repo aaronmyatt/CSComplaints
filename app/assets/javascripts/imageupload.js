@@ -12,4 +12,6 @@ var droppedFiles = false;
   })
   .on('drop', function(e) {
     droppedFiles = e.originalEvent.dataTransfer.files;
+    console.log('file added');
+    console.log(e);
   });
