@@ -16,7 +16,10 @@
 
   <%= f.label "description", "Description", class: 'label' %>
   <p class="control"><%= f.text_area :description, class: 'textarea' %></p>
-  
+
+  <%= f.label "agency", "Agency", class: 'label' %>
+  <p class="control"><%= f.text_field :agency, class: 'input' %></p>
+
   <%= f.label "location", "Location", class: 'label' %>
   <p class="control">
     <%= f.text_field :address, class: 'input', id: "search", placeholder: "Kuala Lumpur" %>
