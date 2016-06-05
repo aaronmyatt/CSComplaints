@@ -1,12 +1,14 @@
 <div class="issue-list level">
   <%= render partial: 'complaint_item_details', locals: {complaint: complaint} %>
   <div class="level-right">
-    <a class="button is-link is-inverted" id="pay-btn">Back this cause</a>
-    <div class="issue-list__raised level-item">
-      <p>Raised <span>RM <%= complaint.total_amount.to_s %></span></p>
-    </div>
+    <% if current_user %>
     <div id="" class="is-hidden complaint-payment-form">
       <%= render partial: 'payments/payment_form', locals: {complaint: complaint} %>
+    </div>
+    <a class="button is-link is-inverted" id="pay-btn">Back this cause</a>
+    <% end %>
+    <div class="issue-list__raised level-item">
+      <p>Raised <span>RM <%= complaint.total_amount.to_s %></span></p>
     </div>
   </div>
 </div>
