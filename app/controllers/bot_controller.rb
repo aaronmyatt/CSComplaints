@@ -9,7 +9,7 @@ class BotController < ActionController::Base
 
         response =
             {
-              "speech": "Your complaint has been registered",
+              "speech": "Your complaint has been registered at the link here: http://cscomplaints.herokuapp.com/complaints/#{complaint.id}",
               "displayText": "Thanks for your complaint, you can find it at the link here: http://cscomplaints.herokuapp.com/complaints/#{complaint.id}",
               "data": "",
               "contextOut": [{"name":"weather", "lifespan":2, "parameters":{"city":"Rome"}}],
