@@ -11,6 +11,8 @@
 </section>
 <section class="section">
   <div class="container">
+      <%= paginate @complaints %>
       <%= render partial: 'complaint_item', collection: @complaints, as: :complaint %>
+      <%= paginate @complaints %>
   </div>
 </section>
