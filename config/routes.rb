@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   post '/upvote' => 'upvote#upvote', as: :upvote
   post '/downvote' => 'upvote#downvote', as: :downvote
+
+  # static pages
+  get '/terms' => 'pages#terms', as: :terms
+  get '/how-it-works' => 'pages#how_it_works', as: :how_it_works
+
   # You can have the root of your site routed with "root"
   root 'complaints#index'
 
