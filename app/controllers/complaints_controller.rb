@@ -1,5 +1,6 @@
 class ComplaintsController < ApplicationController
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /complaints
   # GET /complaints.json
@@ -71,6 +72,10 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.require(:complaint).permit( :title, :description, :address, :latitude, :longitude )
+      params.require(:complaint).permit( :title, :description, :address, :latitude, :longitude, :image, :image_cache )
+    end
+
+    def set_user
+      @user = current_user if user_signed_in?
     end
 end

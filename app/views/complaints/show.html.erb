@@ -123,9 +123,17 @@
 
 <section class="section">
   <div class="container">
-    <p id="notice"><%= notice %></p>
-    
     <%= render partial: "complaint_item", locals: { complaint: @complaint } %>
+
+    <div class="issue-list level">
+      <div class="level-left complaint-img">
+        <%= link_to image_tag(@complaint.image.icon, size: '64'), asset_url(@complaint.image), target: '_blank' if @complaint.image.present? %>
+      </div>
+
+      <div class="issue-list__content is-inline-block level-item">
+        <%= simple_format @complaint.description %>
+      </div>
+    </div>
   </div>
 </section>
  -->

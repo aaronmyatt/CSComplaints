@@ -1,4 +1,6 @@
 class Complaint < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   geocoded_by :address
   belongs_to :user
   acts_as_votable
@@ -13,5 +15,9 @@ class Complaint < ActiveRecord::Base
 
   def nearby(location = "Kuala Lumpur")
     Complaint.near(location, 50, :order => false)
+  end
+
+  def total_votes
+    self.votes_for.size
   end
 end
