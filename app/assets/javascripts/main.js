@@ -26,13 +26,11 @@ $(document).on('click', '#register-btn', function(){
 
 $(document).on('click', '#register-modal .modal-close', function(){
 	$("#register-modal").toggleClass("is-active");
-
 });
 
 $(document).on('click', '#login-btn', function(){
 	$("#login-modal").toggleClass("is-active");
 	$("form#login_user_form").bind("ajax:success", function(e, data, status, xhr) {
-		console.log(data.success)
 		if (data.success) {
 			$("#login-modal").toggleClass("is-active");
 		} else {
@@ -48,4 +46,14 @@ $(document).on('click', '#login-modal .modal-close', function(){
 $(document).on('click', '#pay-btn', function(){
 	var form = $(this).parent().siblings()[1];
 	$(form).toggleClass("is-hidden");
+)};
+
+$(document).ready(function(){
+	$(".photo-slider").unslider({
+		arrows:{
+			prev: '<a class="unslider-arrow prev"><i class="fa fa-chevron-left"></i></a>',
+			next: '<a class="unslider-arrow next"><i class="fa fa-chevron-right"></i></a>'
+		},
+		nav: true
+	});
 });
