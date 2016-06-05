@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name),remote: true, format: :json) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: {id: "register_user_form"},remote: true, format: :json) do |f| %>
   <%= devise_error_messages! %>
   <%= f.text_field :name, autofocus: true, class: 'input', placeholder: "Name" %>
   <%= f.email_field :email, class: 'input', placeholder: "Email" %>

@@ -32,11 +32,29 @@
         <input type="file">
         <label><i class="fa fa-upload"></i> Upload Images</label>
       </div>
-
-      <p class="control m-t-20 " style="text-align: center;">
-        <%= f.submit "Submit Issue", class: 'button is-primary' %>
-        <%= link_to "Cancel", complaints_path, class: 'button is-link' %>
-      </p>
     </div>
   </div>
+
+  <%= label_tag :image, "Image (optional)", class: "label m-t-10" %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+
+  <p class="control">
+    <%= image_tag(@complaint.image.thumb, size: '150', class: 'm-t-20') if @complaint.image.present? %>
+  </p>
+
+  <% if @complaint.image.present? %>
+    <p class="control">
+      <label class='radio'>
+        <%= f.check_box :remove_image, class: "checkbox" %>
+        Remove image
+      </label>
+    </p>
+  <% end %>
+
+
+  <p class="control m-t-20" style="text-align: center;">
+    <%= f.submit "Submit", class: 'button is-primary' %>
+    <%= link_to "Cancel", complaints_path, class: 'button is-link' %>
+  </p>
 <% end %>
