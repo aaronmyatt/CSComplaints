@@ -66,6 +66,6 @@ $(document).on('click', '#profile-btn', function(){
 });
 
 $(document).on('click', '#pay-btn', function(){
-	var form = $('#pay-btn').first().siblings()[1];
+	var form = $(this).first().siblings()[1];
 	$(form).toggleClass("is-hidden");
 });
