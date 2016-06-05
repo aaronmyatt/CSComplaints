@@ -1,26 +1,6 @@
  <section class="section">
 	<div class="container">
-		<div class="issue-list level">
-
-	      <div class="level-left">
-	        <div class="vote vote--small is-inline-block level-item">
-	          <a class="vote__up"><i class="fa fa-chevron-up"></i></a>
-	          <div class="vote__count"><%= @complaint.total_votes %></div>
-	          <a class="vote__down"><i class="fa fa-chevron-down"></i></a>
-	        </div>
-
-	        <div class="issue-list__content is-inline-block level-item">
-	          <h4><%= @complaint.title %></h4>
-	          <p><i class="fa fa-map-marker"></i> <%= @complaint.address %></p>
-	        </div>
-	      </div>
-
-	      <div class="level-right share">
-	        <a href="#"><i class="fa fa-facebook"></i></a>
-	        <a href="#"><i class="fa fa-twitter"></i></a>
-	      </div>
-
-	    </div>
+		<%= render partial: 'complaint_item_details', locals: {complaint: @complaint} %>
 		<div class="columns">
 			<div class="column is-three-quarters" style="padding-right: 40px;">
 
@@ -43,11 +23,16 @@
 					</div>
 
 					<div class="issue-support__block">
-						<h1>RM <%= @complaint.total_amount %></h1>
+						<h1>RM <%= @complaint.total_amount.to_s %></h1>
 						<h4>Pledged</h4>
 					</div>
-
-					<a id="support-btn" class="button is-primary">Pledge your support</a>
+					<div>
+						<div></div>
+						<a id="pay-btn" class="button is-primary">Pledge your support</a>
+						<div id="" class="is-hidden complaint-payment-form">
+							<%= render partial: 'payments/payment_form', locals: {complaint: @complaint} %>
+						</div>
+					</div>
 				</div>
 
 				<div class="issue-goals">
