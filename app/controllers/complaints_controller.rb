@@ -16,7 +16,6 @@ class ComplaintsController < ApplicationController
   # GET /complaints/new
   def new
     @complaint = Complaint.new
-    @locations = Location.new.fetch_locations
   end
 
   # GET /complaints/1/edit
