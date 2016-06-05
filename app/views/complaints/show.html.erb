@@ -40,8 +40,8 @@
 
 					<div class="timeline">
 						<div class="goal">
-							<div class="goal__icon completed"></div>
-							<div class="goal__progress completed"></div>
+							<div class="goal__icon goal__icon_1"></div>
+							<div class="goal__progress goal__progress_1"></div>
 							<div class="goal__content">
 								<h4>RM 50</h4>
 								<p><strong>Letter</strong><br />We will send a letter about this issue to relevant authorities.</p>
@@ -49,8 +49,8 @@
 						</div>
 
 						<div class="goal">
-							<div class="goal__icon completed"></div>
-							<div class="goal__progress"></div>
+							<div class="goal__icon goal__icon_2"></div>
+							<div class="goal__progress goal__progress_2"></div>
 							<div class="goal__content">
 								<h4>RM 100</h4>
 								<p><strong>Follow up Letter</strong><br />We will follow up on the letter previously sent.</p>
@@ -58,8 +58,8 @@
 						</div>
 
 						<div class="goal">
-							<div class="goal__icon"></div>
-							<div class="goal__progress"></div>
+							<div class="goal__icon goal__icon_3"></div>
+							<div class="goal__progress goal__progress_3"></div>
 							<div class="goal__content">
 								<h4>RM 200</h4>
 								<p><strong>Personal Visit</strong><br />Personal visit and submission of letters and signatures.</p>
@@ -67,8 +67,8 @@
 						</div>
 
 						<div class="goal">
-							<div class="goal__icon"></div>
-							<div class="goal__progress"></div>
+							<div class="goal__icon goal__icon_4"></div>
+							<div class="goal__progress goal__progress_4"></div>
 							<div class="goal__content">
 								<h4>RM 500</h4>
 								<p><strong>Get in the news!</strong><br />Publish the matter in the newspapers and online publications.</p>
@@ -118,3 +118,34 @@
   </div>
 </section>
  -->
+
+ <script type="text/javascript" charset="utf-8">
+	 (function(){
+		 console.log('init');
+		 var AMOUNT = <%= @complaint.total_amount.to_i %>;
+
+		 function highlightGoalsAchieved() {
+			 console.log('highlightGoalsAchieved:', AMOUNT);
+			 if(AMOUNT > 50){
+				 $('.goal__icon_1').toggleClass('completed');
+				 $('.goal__progress_1').toggleClass('completed');
+				 if(AMOUNT > 100){
+					 $('.goal__icon_2').toggleClass('completed');
+					 $('.goal__progress_2').toggleClass('completed');
+					 if(AMOUNT > 200){
+						 $('.goal__icon_3').toggleClass('completed');
+						 $('.goal__progress_3').toggleClass('completed');
+						 if(AMOUNT > 500){
+							 $('.goal__icon_4').toggleClass('completed');
+							 $('.goal__progress_4').toggleClass('completed');
+						 }
+					 }
+				 }
+			 }
+
+		 }
+
+
+		 highlightGoalsAchieved();
+	 })();
+ </script>
