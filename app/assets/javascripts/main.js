@@ -20,6 +20,14 @@ $(document).on('click', '#login-modal .modal-close', function(){
 	$("#login-modal").toggleClass("is-active");
 });
 
+$(document).on('click', '#support-btn', function(){
+	$("#support-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#support-modal .modal-close', function(){
+	$("#support-modal").toggleClass("is-active");
+});
+
 $(document).ready(function(){
 	$(".photo-slider").unslider({
 		arrows:{
