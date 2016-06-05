@@ -10,23 +10,31 @@
       </ul>
     </div>
   <% end %>
+  <div class="columns">
+    <div class="column">
+      <%= f.label "title", "Title", class: 'label' %>
+      <p class="control"><%= f.text_field :title, class: 'input', placeholder:'What\'s the issue?' %></p>
 
-  <%= f.label "title", "Title", class: 'label' %>
-  <p class="control"><%= f.text_field :title, class: 'input' %></p>
+      <%= f.label "description", "Description", class: 'label' %>
+      <p class="control"><%= f.text_area :description, class: 'textarea', placeholder:'Describe the problem / issue. Enter as much details as possible.' %></p>
 
-  <%= f.label "description", "Description", class: 'label' %>
-  <p class="control"><%= f.text_area :description, class: 'textarea' %></p>
+      <%= f.label "agency", "Agency", class: 'label' %>
+      <p class="control"><%= f.text_field :agency, class: 'input', placeholder: 'Is there an agency / government department that this issue is relevant to?' %></p>
 
-  <%= f.label "agency", "Agency", class: 'label' %>
-  <p class="control"><%= f.text_field :agency, class: 'input' %></p>
+      <%= f.label "location", "Location", class: 'label' %>
+      <p class="control" style="padding-bottom: 0"><input type="text" class="input" id="search" placeholder="Kuala Lumpur"></p>
 
-  <%= f.label "location", "Location", class: 'label' %>
-  <p class="control">
-    <%= f.text_field :address, class: 'input', id: "search", placeholder: "Kuala Lumpur" %>
-  </p>
 
-  <div id="search_results">
-    <%= render "shared/search_results", locations: @locations %>
+      <div id="search_results">
+        <%= render "shared/search_results", locations: @locations %>
+      </div>
+
+       <label class="label">Add Images</label>
+      <div class="control file-upload">
+        <input type="file">
+        <label><i class="fa fa-upload"></i> Upload Images</label>
+      </div>
+    </div>
   </div>
 
   <%= label_tag :image, "Image (optional)", class: "label m-t-10" %>
@@ -47,7 +55,7 @@
   <% end %>
 
 
-  <p class="control m-t-20">
+  <p class="control m-t-20" style="text-align: center;">
     <%= f.submit "Submit", class: 'button is-primary' %>
     <%= link_to "Cancel", complaints_path, class: 'button is-link' %>
   </p>
