@@ -25,7 +25,7 @@
 
 				<div class="photo-slider">
 					<ul>
-						<li><img src="#" /></li>
+				    <%= content_tag :li, image_tag(@complaint.image) if @complaint.image.present? %>
 					</ul>
 				</div>
 
