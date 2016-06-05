@@ -6,12 +6,11 @@ class Complaint < ActiveRecord::Base
   acts_as_votable
 
   has_many :payments
+  has_many :supporters, through: :payments, source: :user
 
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :title, presence: true
   validates :description, presence: true
-  # validates :lat, presence: true
-  # validates :long, presence: true
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
