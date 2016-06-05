@@ -1,0 +1,19 @@
+<%= form_for(Payment.new) do |f| %>
+    <div class="field">
+      <%= f.label :amount %><br>
+      <%= f.text_field :amount %>
+    </div>
+
+    <div class="field is-hidden">
+      <%= f.label :user_id %><br>
+      <%= f.text_field :user_id, value: current_user.id %>
+    </div>
+
+    <div class="field is-hidden">
+      <%= f.label :complaint_id %><br>
+      <%= f.text_field :complaint_id, value: complaint.id %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
