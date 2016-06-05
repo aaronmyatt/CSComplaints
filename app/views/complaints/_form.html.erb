@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="columns">
     <div class="column">
       <%= f.label "title", "Title", class: 'label' %>
@@ -18,11 +17,14 @@
 
       <%= f.label "description", "Description", class: 'label' %>
       <p class="control"><%= f.text_area :description, class: 'textarea', placeholder:'Describe the problem / issue. Enter as much details as possible.' %></p>
-      
+
+      <%= f.label "agency", "Agency", class: 'label' %>
+      <p class="control"><%= f.text_field :agency, class: 'input', placeholder: 'Is there an agency / government department that this issue is relevant to?' %></p>
+
       <%= f.label "location", "Location", class: 'label' %>
       <p class="control" style="padding-bottom: 0"><input type="text" class="input" id="search" placeholder="Kuala Lumpur"></p>
 
-    
+
       <div id="search_results">
         <%= render "shared/search_results", locations: @locations %>
       </div>
