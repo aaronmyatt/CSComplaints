@@ -4,11 +4,13 @@
 		<div class="columns">
 			<div class="column is-three-quarters" style="padding-right: 40px;">
 
+				<% if @complaint.image.present? %>
 				<div class="photo-slider">
 					<ul>
-				    <%= content_tag :li, image_tag(@complaint.image) if @complaint.image.present? %>
+				    <%= content_tag :li, image_tag(@complaint.image) %>
 					</ul>
 				</div>
+				<% end %>
 
 				<div class="issue-description">
 					<%= simple_format @complaint.description %>
