@@ -2,10 +2,26 @@
 @import "../base/colors";
 
 .hero{
+	position: relative;
 	background-color: #eee;
+	background-image: image-url("cover.jpg") !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: top 35% center !important;
 
+	.hero-body{
+		z-index: 2;
+	}
+
+	.overlay{
+		background: rgba(0,0,0,0.3);
+	}
 	.subtitle{
 		margin-bottom: 50px;
+	}
+
+	.title, .subtitle{
+		color: $white !important;
 	}
 
 	.button{
