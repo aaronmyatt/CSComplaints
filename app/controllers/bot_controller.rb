@@ -2,7 +2,7 @@ class BotController < ActionController::Base
   def facebook
         complaint = Complaint.new
         complaint.description = params[:result][:parameters][:Complaint][:complaint]
-        complaint.title = "Test complaint"
+        complaint.title = params[:result][:parameters][:Complaint][:complaint]
         complaint.address = params[:result][:parameters][:Complaint][:location]
         complaint.user_id = 1
         complaint.save!
