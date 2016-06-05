@@ -61,11 +61,7 @@ $(document).ready(function(){
 	});
 });
 
-$(document).on('click', '#profile-btn', function(){
-	$("#profile-modal").toggleClass("is-active");
-});
-
 $(document).on('click', '#pay-btn', function(){
-	var form = $('#pay-btn').first().siblings()[1];
-	$(form).toggleClass("is-hidden");
+	var form = $(this).first().siblings()[1];
+	$(form).toggleClass("is-active");
 });

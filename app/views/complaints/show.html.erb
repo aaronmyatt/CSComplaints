@@ -28,6 +28,7 @@
 						<h1>RM <%= @complaint.total_amount.to_s %></h1>
 						<h4>Pledged</h4>
 					</div>
+					<% if current_user %>
 					<div>
 						<div></div>
 						<a id="pay-btn" class="button is-primary">Pledge your support</a>
@@ -36,6 +37,7 @@
 						</div>
 					</div>
 				</div>
+				<% end %>
 
 				<div class="issue-goals">
 					<h4>Goals</h4>
