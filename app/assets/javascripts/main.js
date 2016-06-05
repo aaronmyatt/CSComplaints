@@ -43,11 +43,6 @@ $(document).on('click', '#login-modal .modal-close', function(){
 	$("#login-modal").toggleClass("is-active");
 });
 
-$(document).on('click', '#pay-btn', function(){
-	var form = $(this).parent().siblings()[1];
-	$(form).toggleClass("is-hidden");
-)};
-
 $(document).ready(function(){
 	$(".photo-slider").unslider({
 		arrows:{
@@ -56,4 +51,9 @@ $(document).ready(function(){
 		},
 		nav: true
 	});
+});
+
+$(document).on('click', '#pay-btn', function(){
+	var form = $(this).parent().siblings()[1];
+	$(form).toggleClass("is-hidden");
 });

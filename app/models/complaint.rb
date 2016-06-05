@@ -23,7 +23,6 @@ class Complaint < ActiveRecord::Base
   def total_amount
     payments.reduce(0) {|sum,x| sum + x.amount}
   end
-end
 
   def total_votes
     self.votes_for.size
