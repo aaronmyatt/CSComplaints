@@ -4,6 +4,15 @@
 // 	$("#register-modal").toggleClass("is-active");
 // });
 
+
+$(document).on('click', '#profile-btn', function(){
+	$("#profile-modal").toggleClass("is-active");
+});
+
+$(document).on('click', '#profile-modal .modal-close', function(){
+	$("#profile-modal").toggleClass("is-active");
+});
+
 $(document).on('click', '#register-btn', function(){
 	$("#register-modal").toggleClass("is-active");
 	$("form#register_user_form").bind("ajax:success", function(e, data, status, xhr) {
