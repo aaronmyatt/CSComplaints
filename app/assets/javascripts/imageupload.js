@@ -1,6 +1,6 @@
 var droppedFiles = false;
 
-  $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+  $("#new_complaint").on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
     e.preventDefault();
     e.stopPropagation();
   })
@@ -12,4 +12,4 @@ var droppedFiles = false;
   })
   .on('drop', function(e) {
     droppedFiles = e.originalEvent.dataTransfer.files;
-});
+  });
