@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   post '/downvote' => 'upvote#downvote', as: :downvote
 
+  post '/facebook_complaint' => 'bot#facebook'
   # static pages
   get '/terms' => 'pages#terms', as: :terms
   get '/how-it-works' => 'pages#how_it_works', as: :how_it_works
