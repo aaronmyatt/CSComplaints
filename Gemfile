@@ -8,6 +8,8 @@ gem 'rails', '4.2.3'
 # Puma as app server
 gem 'puma'
 
+gem 'kaminari'
+
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
