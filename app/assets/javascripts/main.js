@@ -15,11 +15,11 @@ $(document).on('click', '#profile-modal .modal-close', function(){
 
 $(document).on('click', '#register-btn', function(){
 	$("#register-modal").toggleClass("is-active");
-	$("form#register_user_form").bind("ajax:success", function(e, data, status, xhr) {
-	  if (data.success) {
+	$("form#register_user_form").bind("ajax:complete", function(e, data, status, xhr) {
+	  if (data.status == 200) {
 	    $("#register-modal").toggleClass("is-active");
 	  } else {
-	    return alert('failure!');
+	    return alert('Unauthorized!');
 	  }
 	});
 });
@@ -30,11 +30,11 @@ $(document).on('click', '#register-modal .modal-close', function(){
 
 $(document).on('click', '#login-btn', function(){
 	$("#login-modal").toggleClass("is-active");
-	$("form#login_user_form").bind("ajax:success", function(e, data, status, xhr) {
-		if (data.success) {
+	$("form#login_user_form").bind("ajax:complete", function(e, data, status, xhr) {
+		if (data.status == 200) {
 			$("#login-modal").toggleClass("is-active");
 		} else {
-			return alert('failure!');
+			return alert('Unauthorized!');
 		}
 	});
 });
