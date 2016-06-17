@@ -19,7 +19,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", data: { disable_with: '<i class="fa fa-spinner"></i> Logging in...' } %>
   </div>
 <% end %>
 

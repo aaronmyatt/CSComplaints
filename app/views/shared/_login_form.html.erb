@@ -1,5 +1,5 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {id: "login_user_form"},remote: true, format: :json) do |f| %>
   <%= f.email_field :email, autofocus: true, class: "input", placeholder: "Email" %>
   <%= f.password_field :password, autocomplete: "off", class: "input", placeholder: "Password" %>
-  <%= f.submit "Sign in with Email", class: "button is-fullwidth is-primary" %>
+  <%= f.submit "Sign in with Email", class: "button is-fullwidth is-primary", data: { disable_with: 'Logging in...' } %>
 <% end %>
